@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SmartLibraryLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SmartLibraryLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDao\IBukuDao.cs" />
     <Compile Include="IDao\IDao.cs" />
+    <Compile Include="IDao\IPenerbit.cs" />
     <Compile Include="Model\Buku.cs" />
     <Compile Include="Model\Penerbit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
