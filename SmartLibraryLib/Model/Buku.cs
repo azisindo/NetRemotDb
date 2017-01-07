@@ -37,8 +37,8 @@ namespace SmartLibraryLib.Model
             set { _bahasa = value; }
         }
 
-        private string _penerbit;
-        public string penerbit
+        private Penerbit _penerbit = new Penerbit();
+        public Penerbit penerbit
         {
             get { return _penerbit; }
             set { _penerbit = value; }

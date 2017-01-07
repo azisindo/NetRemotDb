@@ -16,8 +16,8 @@ namespace SmartLibraryLib.Model
             set { _penerbitId = value; }
         }
 
-        private int _nama;
-        public int nama
+        private string _nama;
+        public string nama
         {
             get { return _nama; }
             set { _nama = value; }
