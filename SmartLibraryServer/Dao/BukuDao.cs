@@ -121,7 +121,9 @@ namespace SmartLibraryServer
 
         public int Save(Buku Entity)
         {
-           Console.WriteLine("Method Save dieksekusi di sisi server");
+            Console.WriteLine("Method Save dieksekusi di sisi server");
+
+            //MessageBox.show(Entity.isbn + ' ' + Entity.judul + ' ' + Entity.edisi+' '+ Entity.bahasa+''+Entity.penerbit.penerbitId)
 
             strSql = "INSERT INTO buku (isbn, judul, edisi, bahasa, penerbit_id) " +
                      "VALUES (@1, @2, @3, @4, @5)";
@@ -131,7 +133,7 @@ namespace SmartLibraryServer
                 cmd.Parameters.AddWithValue("@2", Entity.judul);
                 cmd.Parameters.AddWithValue("@3", Entity.edisi);
                 cmd.Parameters.AddWithValue("@4", Entity.bahasa);
-                cmd.Parameters.AddWithValue("@5", Entity.penerbit);
+                cmd.Parameters.AddWithValue("@5", Entity.penerbit.penerbitId);
 
                 return cmd.ExecuteNonQuery();
             }
@@ -141,18 +143,18 @@ namespace SmartLibraryServer
         {
             Console.WriteLine("Method Update dieksekusi di sisi server");
 
-            strSql = "UPDATE buku SET judul = @1, edisi = @2, bahasa = @3, penerbit_id = @4 " +
-                     "WHERE isbn = @5";
-            using (OleDbCommand cmd = new OleDbCommand(strSql, conn))
-            {
-                cmd.Parameters.AddWithValue("@1", Entity.judul);
-                cmd.Parameters.AddWithValue("@2", Entity.edisi);
-                cmd.Parameters.AddWithValue("@3", Entity.bahasa);
-                cmd.Parameters.AddWithValue("@4", Entity.penerbit);
-                cmd.Parameters.AddWithValue("@5", Entity.isbn);
+             strSql = "UPDATE buku SET judul = @1, edisi = @2, bahasa = @3, penerbit_id = @4 " +
+                      "WHERE isbn = @5";
+             using (OleDbCommand cmd = new OleDbCommand(strSql, conn))
+             {
+                 cmd.Parameters.AddWithValue("@1", Entity.judul);
+                 cmd.Parameters.AddWithValue("@2", Entity.edisi);
+                 cmd.Parameters.AddWithValue("@3", Entity.bahasa);
+                 cmd.Parameters.AddWithValue("@4", Entity.penerbit);
+                 cmd.Parameters.AddWithValue("@5", Entity.isbn);
 
-                return cmd.ExecuteNonQuery();
-            }
+                 return cmd.ExecuteNonQuery();
+             }
         }
 
         private static Buku MappingDtrToObject(OleDbDataReader dtr)
