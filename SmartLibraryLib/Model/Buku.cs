@@ -16,5 +16,32 @@ namespace SmartLibraryLib.Model
             set { _isbn = value; }
         }
 
+        private string _judul;
+        public string judul
+        {
+            get { return _judul; }
+            set { _judul = value; }
+        }
+
+        private string _edisi;
+        public string edisi
+        {
+            get { return _edisi; }
+            set { _edisi = value; }
+        }
+
+        private string _bahasa;
+        public string bahasa
+        {
+            get { return _bahasa; }
+            set { _bahasa = value; }
+        }
+
+        private string _penerbit;
+        public string penerbit
+        {
+            get { return _penerbit; }
+            set { _penerbit = value; }
+        }
     }
 }

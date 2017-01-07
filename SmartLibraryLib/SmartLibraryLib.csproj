@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IDao\IDao.cs" />
     <Compile Include="Model\Buku.cs" />
+    <Compile Include="Model\Penerbit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
